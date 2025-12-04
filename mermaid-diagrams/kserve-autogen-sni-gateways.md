@@ -15,8 +15,8 @@ graph TB
         IstioIngressGateway["istio-ingressgateway<br/>(Pod)"]
 
         VirtualServiceMesh -->|mTLS| InferenceWorkload
-        VirtualServiceKnativeLocal -->|https (B)| IstioIngressGateway
-        WorkloadProxy -->|https (B)| IstioIngressGateway
+        VirtualServiceKnativeLocal -->|"https (B)"| IstioIngressGateway
+        WorkloadProxy -->|"https (B)"| IstioIngressGateway
         IstioIngressGateway -->|mTLS| InferenceWorkload
         IstioIngressGateway -->|mTLS| ActivatorKnativeServing
     end
@@ -33,7 +33,7 @@ graph TB
         Note2["Must trust the CA that<br/>signed the https certs<br/>(B)"]
     end
 
-    WorkloadNoProxy -->|https (B)| IstioIngressGateway
+    WorkloadNoProxy -->|"https (B)"| IstioIngressGateway
     AutogenSNI --> IstioIngressGateway
     KnativeLocalGW -.->|deprecated| KnativeLocalGW
 

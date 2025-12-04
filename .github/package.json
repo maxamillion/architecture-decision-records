@@ -1,0 +1,16 @@
+{
+  "name": "architecture-decision-records-validation",
+  "version": "1.0.0",
+  "description": "Validation tools for architecture decision records",
+  "private": true,
+  "scripts": {
+    "validate-mermaid": "../scripts/validate-mermaid.sh"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^10.6.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

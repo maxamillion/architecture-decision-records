@@ -86,17 +86,17 @@ graph TB
         Dashboard -.-> DashIcon5["☸️"]
     end
 
-    DSCIController -->|Creates/manages| ServiceMeshConfig
+    DSCIController -->|"Creates/manages"| ServiceMeshConfig
     DSCIController -->|Manages| DSCI
 
     DSCController -->|Manages| DSC
     DSCController -->|Watches| DSCI
 
-    DSCI -->|Creates/manages| AuthoringCR
-    DSCI -->|Creates/manages| MonitoringResources
-    DSCI -->|Creates/manages| TrustedCAConfigmaps["TrustedCA Configmaps"]
+    DSCI -->|"Creates/manages"| AuthoringCR
+    DSCI -->|"Creates/manages"| MonitoringResources
+    DSCI -->|"Creates/manages"| TrustedCAConfigmaps["TrustedCA Configmaps"]
 
-    DSC -->|manage/watches| RedhatODSApplications
+    DSC -->|"manage/watches"| RedhatODSApplications
 
     style Admin fill:#fff,stroke:#333
     style ODHOperator fill:#9ad,stroke:#333
