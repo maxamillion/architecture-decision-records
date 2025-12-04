@@ -48,15 +48,15 @@ graph TB
         DSCReconciler -->|Watches| DataScienceCluster
     end
 
-    FeatureTracker -->|Creates<br/>Manages| Resource1["Resource"]
+    FeatureTracker -->|"Creates/Manages"| Resource1["Resource"]
 
-    DSCIReconciler -->|Creates<br/>Manages| Resource2["Resource"]
-    DSCReconciler -->|Creates<br/>Manages| Resource3["Resource"]
-    DashboardReconciler -->|Creates<br/>Manages| Resource4["Resource"]
+    DSCIReconciler -->|"Creates/Manages"| Resource2["Resource"]
+    DSCReconciler -->|"Creates/Manages"| Resource3["Resource"]
+    DashboardReconciler -->|"Creates/Manages"| Resource4["Resource"]
 
-    Dashboard1 -->|Creates<br/>Manages| DashboardReconciler
-    Ellipsis1 -->|Creates<br/>Manages| EllipsisReconciler
-    ModelServing1 -->|Creates<br/>Manages| ModelServingReconciler
+    Dashboard1 -->|"Creates/Manages"| DashboardReconciler
+    Ellipsis1 -->|"Creates/Manages"| EllipsisReconciler
+    ModelServing1 -->|"Creates/Manages"| ModelServingReconciler
 
     ODHOperator["ODH Operator"]
     ODHOperator -.-> Reconcilers

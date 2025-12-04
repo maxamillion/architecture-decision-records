@@ -8,32 +8,32 @@ graph TB
 
     subgraph K8sCluster["K8s Cluster"]
         subgraph RedhatODSApps["redhat-ods-applications"]
-            ODHDashboard["1c: rhods-dashboard-{id}"]
-            DashboardRoute["1a: Dashboard<br/>Route"]
+            ODHDashboard["1c: rhods-dashboard-id"]
+            DashboardRoute["1a: Dashboard Route"]
 
-            OdhDashboardApp["OdhDashboardApplication<br/>(cached)"]
+            OdhDashboardApp["OdhDashboardApplication - cached"]
 
             ODHDashboard --> OdhDashboardApp
         end
 
-        subgraph ODHDashboardNS["odh-dashboard-{id}"]
-            ODHDashboardConfig["OdhDashboardApplication<br/>(odh-dashboard-config)"]
+        subgraph ODHDashboardNS["odh-dashboard-id"]
+            ODHDashboardConfig["OdhDashboardApplication - odh-dashboard-config"]
         end
 
-        DSCandDSCI["DSC & DSCI<br/>(cluster CRs)"]
+        DSCandDSCI["DSC and DSCI - cluster CRs"]
 
         Client -->|1b| Areas
-        Areas["'Areas'"]
+        Areas["Areas"]
 
-        Areas -->|Am I Enabled?| FeatureDecision{"2: Feature<br/>A"}
+        Areas -->|Am I Enabled?| FeatureDecision{"2: Feature A"}
 
-        FeatureDecision -->|Feature<br/>B| FeatureB["Feature<br/>B"]
+        FeatureDecision -->|Feature B| FeatureB["Feature B"]
         FeatureDecision --> FeatureEllipsis["... Feature"]
 
-        Areas -->|3a: Gets various<br/>stack information| DSCandDSCI
-        Areas -->|3b: Calls pod and<br/>gets cached value| ODHDashboard
+        Areas -->|"3a: Gets various stack information"| DSCandDSCI
+        Areas -->|"3b: Calls pod and gets cached value"| ODHDashboard
 
-        ODHDashboard -->|4: Refresh cache<br/>(every 2 mins)| OdhDashboardApp
+        ODHDashboard -->|"4: Refresh cache every 2 mins"| OdhDashboardApp
         OdhDashboardApp --> ODHDashboardConfig
     end
 

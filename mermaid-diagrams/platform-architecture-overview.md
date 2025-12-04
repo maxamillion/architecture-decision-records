@@ -94,7 +94,7 @@ graph TB
 
     DSCI -->|Creates/manages| AuthoringCR
     DSCI -->|Creates/manages| MonitoringResources
-    DSCI -->|Creates/manages| TrustedCAConfigmaps["TrustedCA<br/>Configmaps"]
+    DSCI -->|Creates/manages| TrustedCAConfigmaps["TrustedCA Configmaps"]
 
     DSC -->|manage/watches| RedhatODSApplications
 

@@ -22,7 +22,7 @@ graph TB
         KnativeLocalGW["knative-local-gateway<br/>(Gateway)<br/>- mTLS (A)"]
 
         VirtualServiceMesh -->|mTLS| InferenceWorkload
-        VirtualServiceKnativeLocal -->|istio_mutual: mTLS<br/>(A)| IstioIngressGateway
+        VirtualServiceKnativeLocal -->|"istio_mutual: mTLS (A)"| IstioIngressGateway
         WorkloadProxy -->|mTLS| InferenceWorkload
         IstioIngressGateway -->|mTLS| InferenceWorkload
         IstioIngressGateway -->|mTLS| ActivatorKnativeServing
@@ -41,7 +41,7 @@ graph TB
         OpenShiftCertCopy["OpenShift serving cert<br/>Secret (copy)"]
     end
 
-    WorkloadOutside -->|Either plain text,<br/>or simple TLS| KserveIngressGW
+    WorkloadOutside -->|"Either plain text or simple TLS"| KserveIngressGW
     WorkloadMeshProxy["Workload inside the mesh<br/>(with proxy)"]
     WorkloadMeshProxy -->|mTLS| KserveIngressGW
 

@@ -8,8 +8,8 @@ graph TB
         FeatureTracker["Feature<br/>Tracker"]
         Resource["Resource"]
 
-        FeatureTracker -->|Creates / Manages| DSCIReconciler
-        Resource -->|Creates / Manages| DSCReconciler
+        FeatureTracker -->|"Creates/Manages"| DSCIReconciler
+        Resource -->|"Creates/Manages"| DSCReconciler
     end
 
     subgraph Components["Components"]
@@ -17,7 +17,7 @@ graph TB
         Ellipsis["..."]
         ModelServing["Model Serving"]
 
-        Components1[Components] -->|Creates / Manages| DSCReconciler
+        Components1[Components] -->|"Creates/Manages"| DSCReconciler
     end
 
     subgraph Reconcilers["Reconcilers"]
